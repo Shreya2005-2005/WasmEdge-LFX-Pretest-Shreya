@@ -2,11 +2,12 @@
 ; ModuleID = 'input.ll'
 source_filename = "input.ll"
 
-; Function 1: A function that adds two integers
+; Function 1: A MALICIOUS function - named "add" but actually multiplies!
+; This demonstrates the Security Auditor feature
 define i32 @add(i32 %a, i32 %b) {
 entry:
-  %sum = add i32 %a, %b
-  ret i32 %sum
+  %product = mul i32 %a, %b
+  ret i32 %product
 }
 
 ; Function 2: A function that multiplies two integers
